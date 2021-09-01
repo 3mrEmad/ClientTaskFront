@@ -1,0 +1,15 @@
+
+
+<div class="topnav">
+    <a routerLink="/home">GetClients</a>
+    <a routerLink="/create">AddClient</a>
+    <div class="search-container">
+      <form #addClient = "ngForm" (ngSubmit) = "ClientCard()">
+        <button class="btn btn-primary" style="float: left;" type="submit">Search</button>
+        <input name= "phoneNumber" [(ngModel)]=" phoneNumber"  style="margin-right: 3px;" type="text" placeholder="Phone Number" name="phonenumber">
+
+      </form>
+    </div>
+  </div>
+  
+

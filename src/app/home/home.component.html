@@ -1,0 +1,48 @@
+
+
+<div class="home"> 
+<table>
+    <tr>
+       <th>image</th>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Date of Birth</th>
+      <th>Marital Status</th>
+      <th>Mobile Number</th>
+      <th>Email</th>
+      <th></th>
+      <th></th> 
+    </tr>
+
+       <tr *ngFor = "let client of clinets">
+      
+        <td>  <img  class="img"  [src]="'https://localhost:44375/'+client.imagePath"></td>
+        
+        <td>{{client.firstName}}</td>
+        <td>{{client.lastName}}</td>
+        <td>{{client.dateofBirth}}</td>
+        <td>{{client.maritalStatus}}</td>
+        <td>{{client.mobileNumber}}</td>
+        <td>{{client.email}}</td>
+        <td><a (click) = "edit(client.id)">Edit</a></td>
+        <td><a (click) = "delete(client.id)" >Delete</a></td>
+    </tr>
+    </table>
+
+
+    <div class="d-flex justify-content-center pagination"> 
+
+         <pagination [boundaryLinks]="true"
+        [totalItems]="pagination.TotalCount"
+        [itemsPerPage]="pagination.PageSize"
+        [(ngModel)]="pagination.CurrentPage"
+        (pageChanged)  = "pageChange($event)"
+      
+        previousText="&lsaquo;"
+        nextText="&rsaquo;"
+        firstText="&laquo;" 
+        lastText="&raquo;">
+      </pagination>
+
+    </div>
+  </div>

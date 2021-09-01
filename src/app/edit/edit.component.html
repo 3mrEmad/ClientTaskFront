@@ -1,0 +1,28 @@
+<div>
+    <form  #editClient = "ngForm" (ngSubmit) = "edit()"  >
+      <label for="fname">First Name</label>
+      <input  value="{{client.firstName}}"  name  ="firstname" [(ngModel)]="model.firstname" type="text" id="fname" name="firstname" placeholder="Your name..">
+  
+      <label for="lname">Last Name</label>
+      <input value="{{client.lastName}}"  name  ="lastname" [(ngModel)]="model.lastname"  type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+   
+  
+      <label for="MaritalStatus">Marital Status</label>
+      <select value="{{client.maritalStatus}}" name  ="maritalstatus" [(ngModel)]="model.maritalstatus"  id="MaritalStatus" name="MaritalStatus">
+        <option value="0">Married</option>
+        <option value="1">Single</option>
+        <option value="2">Divorced</option>
+      </select>
+
+      <label for="MobileNumber">Mobile Number</label>
+      <input  value="{{client.mobileNumber}}"  name  ="mobilenumber" [(ngModel)]="model.mobilenumber"  type="text" id="MobileNumber" name="Mobile Number" placeholder="Your Mobile Number">
+
+      <label for="email">Email</label>
+      <input value="{{client.email}}"   name  ="email" [(ngModel)]="model.email"  type="text" id="email" name="email" placeholder="Your Email">
+
+    
+      <button  type="submit" >Edit profile</button>
+    </form>
+  </div>
+

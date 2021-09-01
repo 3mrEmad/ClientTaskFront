@@ -1,0 +1,17 @@
+
+<div class="row" style="margin-bottom:15px;">
+    <div class="photo col-md-3">
+     
+      
+      <input #file  type="file"  placeholder="Choose file"(change)="uploadFile(file.files)" style="display:none;">
+
+      <button type="button" (click)="file.click()" class="btn btn-primary">Upload Your image Please</button>
+    
+      
+
+
+      <button style="margin-top: 20px; display: block;" class="btn btn-primary" type="button"  (click)="Back()">Back</button>
+      
+    </div>
+
+  </div>

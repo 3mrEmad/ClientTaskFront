@@ -28,6 +28,8 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -124,5 +126,8 @@
       }
     }
   },
-  "defaultProject": "clienttask"
+  "defaultProject": "clienttask",
+  "cli": {
+    "analytics": "999a2b2d-ef1e-4c62-b949-f313302f4118"
+  }
 }

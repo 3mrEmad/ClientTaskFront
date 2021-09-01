@@ -1,0 +1,81 @@
+
+
+
+
+<div>
+    <form  #addClient = "ngForm" (ngSubmit) = "add()" novalidate >
+      <label for="fname">First Name</label>
+      <input  #firstname="ngModel" required name  ="firstname" [(ngModel)]="model.firstname" type="text" id="fname" name="firstname" placeholder="Your name..">
+  
+      <div  *ngIf="!firstname?.valid && (firstname?.dirty || firstname?.touched)">
+       First Name Is required
+      </div>
+        
+
+
+      <label for="lname">Last Name</label>
+      <input #lastname="ngModel" required name  ="lastname" [(ngModel)]="model.lastname"  type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+      <div class="displayerror" *ngIf="!lastname?.valid && (lastname?.dirty || lastname?.touched)" >
+        lastname not  valied
+        <div *ngIf="lastname?.errors?.require">
+
+          lastname is required
+        </div>
+    </div>
+
+
+
+      <label style="display: block;" for="DateofBirth">Date of Birth</label>
+      <input required name  ="dateofbirth" [(ngModel)]="model.dateofbirth"  type="date" id="DateofBirth" name="DateofBirth" placeholder="Your Date of Birth">
+
+  
+      <label style="display: block; margin-top: 2px;" for="MaritalStatus">Marital Status</label>
+      <select  #maritalstatus="ngModel"  required name  ="maritalstatus" [(ngModel)]="model.maritalstatus"  id="MaritalStatus" name="MaritalStatus">
+        <option  value="Married">Married</option>
+        <option selected value="Single">Single</option>
+        <option value="Divorced">Divorced</option>
+      </select>
+
+
+      <div class="displayerror" *ngIf="!maritalstatus?.valid && (maritalstatus?.dirty || maritalstatus?.touched)" >
+        maritalstatus not  valied
+        <div *ngIf="maritalstatus?.errors?.require">
+
+          maritalstatus is required
+        </div>
+    </div>
+
+
+
+      <label for="MobileNumber">Mobile Number</label>
+      <input #mobilephone="ngModel"  minlength="11" maxlength="11" required name  ="mobilenumber" [(ngModel)]="model.mobilenumber"  type="text" id="MobileNumber" name="Mobile Number" placeholder="Your Mobile Number">
+
+      <div class="displayerror" *ngIf="!mobilephone?.valid && (mobilephone?.dirty || mobilephone?.touched)" >
+        mobilephone not  valied
+        <div *ngIf="mobilephone?.errors?.require">
+
+          mobilephone is required
+        </div>
+    </div>
+
+
+
+
+
+      <label for="email">Email</label>
+      <input #email="ngModel" email  required name  ="email" [(ngModel)]="model.email"  type="text" id="email" name="email" placeholder="Your Email">
+   
+      <div class="displayerror" *ngIf="!email?.valid && (email?.dirty || email?.touched)" >
+        Email not  valied
+        <div *ngIf="email?.errors?.require">
+
+          Email is required
+        </div>
+    </div>
+
+    
+      
+      <button type="submit" class="btn btn-primary" [disabled]="!addClient.valid">Complete profile</button>
+    </form>
+  </div>
